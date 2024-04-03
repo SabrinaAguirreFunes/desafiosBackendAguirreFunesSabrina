@@ -1,0 +1,13 @@
+{
+    "name": "desafiosbackendaguirrefunes",
+    "version": "1.0.0",
+    "description": "",
+    "main": "indexDesafioClase4.js",
+    "type": "module",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node src/indexDesafioClase4.js"
+    },
+    "author": "",
+    "license": "ISC"
+  }

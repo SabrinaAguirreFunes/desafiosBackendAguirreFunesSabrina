@@ -22,4 +22,4 @@ A su vez se crearon los siguientos metodos:
 
 Se realizaron pruebas en el archivo indexDesafioClase2.js
 
-_Para ejecutar estas pruebas es necesario correr en consola el siguiente comando: "node desafioClase2/src/indexDesafioClase2.js"_
+_Para ejecutar estas pruebas es necesario correr en consola el siguiente comando desde dentro de la carpeta de desafioClase2: "npm start"_

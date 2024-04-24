@@ -1,4 +1,4 @@
-# desafiosBackendAguirreFunes
+# desafiosBackendAguirreFunesSabrina
 
 #### Tercera entrega (carpeta _"desafioClase6"_)
 

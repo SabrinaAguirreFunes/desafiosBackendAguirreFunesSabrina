@@ -8,7 +8,7 @@ Se adjunta capturas del funcionamiento en el navegador.
 
 #### Nuevas rutas
 
-- ruta _/static_ -> utilizando únicamente handlebars, muestra una vista con el listado de todos los productos
+- ruta _/_ -> utilizando únicamente handlebars, muestra una vista con el listado de todos los productos
 
 ![alt text](./src/public/img/image.png)
 
@@ -20,6 +20,15 @@ Se adjunta capturas del funcionamiento en el navegador.
 Prueba de agregar productos:
 ![alt text](./src/public/img/image-1.png)
 ![alt text](./src/public/img/image-2.png)
+
+Al dar al botón de "Agregar producto" el formulario se limpia y en el listado en tiempo real de productos, al final de la página y sin necesidad de actualizarla, aparece el producto recién agregado:
+![alt text](./src/public/img/image-3.png)
+
+Prueba para eliminar productos:
+![alt text](./src/public/img/image-4.png)
+
+Al dar al botón de "Eliminar producto" el formulario se limpia y en el listado en tiempo real de productos, sin necesidad de actualizarla, se puede ver que falta el producto recién eliminado:
+![alt text](./src/public/img/image-5.png)
 
 #### Pasos para ejecutar el servidor
 

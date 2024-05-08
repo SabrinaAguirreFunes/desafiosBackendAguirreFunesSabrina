@@ -3,7 +3,7 @@ import express from "express";
 import handlebars from "express-handlebars";
 import { Server } from "socket.io";
 
-import { __dirname } from "./utils/path.js";
+import { __dirname } from "./path.js";
 import path from "path";
 import prodsRouter from "./routes/products.routes.js";
 import cartsRouter from "./routes/carts.routes.js";
@@ -26,11 +26,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.engine("handlebars", handlebars.engine());
 app.set("view engine", "handlebars");
-app.set("views", path.resolve(__dirname, "../views"));
+app.set("views", path.resolve(__dirname, "./views"));
 
 app.use("/api/products", prodsRouter);
 app.use("/api/carts", cartsRouter);
-app.use("/static", express.static(path.join(__dirname, "/public")));
+app.use(express.static(__dirname + "/public"));
 app.use("/realtimeproducts", express.static(path.join(__dirname, "/public")));
 
 //Server with express
@@ -38,13 +38,22 @@ app.use("/realtimeproducts", express.static(path.join(__dirname, "/public")));
 socketServer.on("connection", (socket) => {
   console.log("Servidor Socket.io conectado");
   socket.on("newProd", async (prod) => {
-    const { title, description, code, price, stock, category, thumbnail } =
-      prod;
+    const {
+      title,
+      description,
+      code,
+      price,
+      status = true,
+      stock,
+      category,
+      thumbnail,
+    } = prod;
     const newProduct = new Product(
       title,
       description,
       code,
       price,
+      status,
       stock,
       category,
       thumbnail
@@ -102,10 +111,6 @@ getProds();
 
 //Endpoints
 app.get("/", (req, res) => {
-  res.send("Bienvenido al cuarto desafío.");
-});
-
-app.get("/static", (req, res) => {
   res.render("home", {
     css: "style.css",
     title: "Home",

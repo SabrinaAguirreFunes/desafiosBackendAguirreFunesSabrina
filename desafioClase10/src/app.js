@@ -27,11 +27,11 @@ app.use(express.urlencoded({ extended: true }));
 app.engine("handlebars", handlebars.engine());
 app.set("view engine", "handlebars");
 app.set("views", path.resolve(__dirname, "./views"));
+app.use(express.static(__dirname + "/public"));
 
 app.use("/api/products", prodsRouter);
 app.use("/api/carts", cartsRouter);
-app.use(express.static(__dirname + "/public"));
-app.use("/realtimeproducts", express.static(path.join(__dirname, "/public")));
+app.use("/realtimeproducts", express.static(__dirname + "/public"));
 
 //Server with express
 
